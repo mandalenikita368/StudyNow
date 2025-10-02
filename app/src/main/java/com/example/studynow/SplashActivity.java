@@ -1,35 +1,40 @@
 package com.example.studynow;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class SplashActivity extends AppCompatActivity {
+
+    private static final long SPLASH_DELAY = 2000; // 2 sec delay
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
 
-        // Handle insets for safe area
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.splash_root), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        new Handler().postDelayed(() -> {
+            SharedPreferences prefs = getSharedPreferences("app_prefs", MODE_PRIVATE);
+            boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
+            boolean isAccountCreated = prefs.getBoolean("isAccountCreated", false);
 
-        // Delay 3 sec then go to MainActivity
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            Intent intent;
+            if (!isAccountCreated) {
+                // First-time user → go to RegisterActivity
+                intent = new Intent(SplashActivity.this, RegisterActivity.class);
+            } else if (!isLoggedIn) {
+                // Account created but not logged in → go to LoginActivity
+                intent = new Intent(SplashActivity.this, LoginActivity.class);
+            } else {
+                // Already logged in → MainActivity
+                intent = new Intent(SplashActivity.this, MainActivity.class);
+            }
+
+            startActivity(intent);
             finish();
-        }, 3000);
+        }, SPLASH_DELAY);
     }
 }

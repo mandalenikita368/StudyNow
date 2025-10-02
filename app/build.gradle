@@ -29,6 +29,9 @@ android {
 }
 
 dependencies {
+    // Room components
+    implementation "androidx.room:room-runtime:2.5.2"
+    annotationProcessor "androidx.room:room-compiler:2.5.2"  // Java projects
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.29'
     implementation libs.appcompat
     implementation libs.material
