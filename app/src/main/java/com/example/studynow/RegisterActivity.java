@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText fullNameEt, emailEt, usernameEt, passwordEt;
     private Spinner educationSpinner, yearSpinner;
     private Button createAccountBtn;
+    private TextView alreadyLogin;
     private AppDatabase db;
     private ExecutorService executor;
 
@@ -41,7 +43,9 @@ public class RegisterActivity extends AppCompatActivity {
         educationSpinner = findViewById(R.id.educationSpinner);
         yearSpinner = findViewById(R.id.yearSpinner);
         createAccountBtn = findViewById(R.id.createAccountBtn);
+        alreadyLogin = findViewById(R.id.alreadyLogin);
 
+        // Spinner Adapters
         ArrayAdapter<CharSequence> educationAdapter = ArrayAdapter.createFromResource(this,
                 R.array.education_options, android.R.layout.simple_spinner_item);
         educationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -52,7 +56,15 @@ public class RegisterActivity extends AppCompatActivity {
         yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         yearSpinner.setAdapter(yearAdapter);
 
+        // Create Account button click
         createAccountBtn.setOnClickListener(v -> registerUser());
+
+        // Already have account click
+        alreadyLogin.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void registerUser() {
@@ -93,7 +105,8 @@ public class RegisterActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     Toast.makeText(RegisterActivity.this,
                             "Account created successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
                     finish();
                 });
             }
