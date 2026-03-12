@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941363242723",
+    "project_id": "studynow-c15cb",
+    "storage_bucket": "studynow-c15cb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941363242723:android:83af39bbb2514624de87d6",
+        "android_client_info": {
+          "package_name": "com.example.focusnow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVH9SFzg1b-dPK3lY350zZZ39ObxmP9zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

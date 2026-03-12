@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_genz"
+    android:padding="24dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Focus Mode 🔒"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stay Locked In 🔥"
+        android:textColor="#C084FC"
+        android:textSize="14sp"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Timer Container -->
+    <!-- Timer Container -->
+    <FrameLayout
+        android:id="@+id/timerContainer"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_below="@id/tvSubtitle"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="1500"
+            android:progress="1500"
+            android:progressDrawable="@drawable/circular_progress_neon"
+            android:rotation="-90"/>
+
+        <!-- Centered Content -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25:00"
+                android:textColor="#FFFFFF"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to change time"
+                android:textColor="#C084FC"
+                android:textSize="12sp"
+                android:layout_marginTop="6dp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timerContainer"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:text="⚡ Start"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button_neon"/>
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="130dp"
+            android:layout_height="55dp"
+            android:text="⏸ Pause"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_button_dark"/>
+
+    </LinearLayout>
+
+    <!-- Glass Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/sessionCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLayout"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:cardBackgroundColor="#1E1E2E"
+        app:strokeColor="#A855F7"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎯 Today’s Goal"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complete DSA Practice"
+                android:textColor="#C084FC"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

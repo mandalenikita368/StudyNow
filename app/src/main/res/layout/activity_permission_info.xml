@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F7FB">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Permissions Required"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#222"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="To help you stay focused during study sessions, StudyNow requires a few permissions."
+            android:textSize="16sp"
+            android:textColor="#555"/>
+
+        <!-- Usage Access -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="📊 Usage Access Permission"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This permission allows the app to detect when distracting apps like Instagram, YouTube, or games are opened during a focus session so we can remind you to stay on track."
+            android:textSize="15sp"
+            android:textColor="#555"/>
+
+        <!-- Overlay -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="🛑 Overlay Permission"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This allows StudyNow to show a blocking screen when you open distracting apps during a focus session."
+            android:textSize="15sp"
+            android:textColor="#555"/>
+
+        <!-- Privacy -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="🔒 Your Privacy Matters"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="StudyNow does NOT collect personal app usage data. Your study sessions stay private and secure. We do not sell or share your data."
+            android:textSize="15sp"
+            android:textColor="#555"/>
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="32dp"
+            android:text="Continue"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</ScrollView>
