@@ -42,25 +42,22 @@ The goal of this project is to **reduce distractions and improve study efficienc
 
 ---
 
-# 📱 App Screenshots
+## 📱 App Screenshots
 
-## Splash Screen
-![Splash Screen](screenshots/splash.png)
+### Splash Screen
+![Splash Screen](https://raw.githubusercontent.com/mandalenikita368/StudyNow/main/screenshots/splash.png)
 
-## Login Screen
-![Login Screen](screenshots/login.png)
+### Login Screen
+![Login Screen](https://raw.githubusercontent.com/mandalenikita368/StudyNow/main/screenshots/login.png)
 
-## Dashboard
-![Dashboard](screenshots/dashboard.png)
+### Dashboard
+![Dashboard](https://raw.githubusercontent.com/mandalenikita368/StudyNow/main/screenshots/dashboard.png)
 
-## Focus Session
-![Focus Session](screenshots/focus_session.png)
+### Focus Session
+![Focus Session](https://raw.githubusercontent.com/mandalenikita368/StudyNow/main/screenshots/focus_session.png)
 
-## Focus Analytics
-![Focus Analytics](screenshots/focus_analysis.png)
-
----
-
+### Focus Analytics
+![Focus Analytics](https://raw.githubusercontent.com/mandalenikita368/StudyNow/main/screenshots/focus_analysis.png)
 # 🛠 Tech Stack
 
 ### 📱 Mobile Development
